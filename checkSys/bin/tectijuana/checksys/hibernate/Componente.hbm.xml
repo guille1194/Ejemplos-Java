@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/03/2017 08:18:38 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="tectijuana.checksys.hibernate.Componente" table="chklst_comp">
+        <id name="id" type="java.lang.Integer">
+            <column name="id_componente" />
+            <generator class="increment" />
+        </id>
+        <property name="mensaje" type="java.lang.String">
+            <column name="mensaje" />
+        </property>
+        <many-to-one name="tipoComponente" class="tectijuana.checksys.hibernate.TipoComponente" fetch="join">
+            <column name="tipo_componente" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/03/2017 08:24:00 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="tectijuana.checksys.hibernate.Respuesta" table="chklst_resp">
+    <!--<id name="id" type="tectijuana.checksys.hibernate.IdRespuesta">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>-->
+        
+         <composite-id name="id" class="tectijuana.checksys.hibernate.IdRespuesta">
+         	<key-many-to-one name="componente" class="tectijuana.checksys.hibernate.Componente" column="id_componente" lazy="false" />
+			<key-property name="idRespuesta" column="id_respuesta" />
+		</composite-id>
+        
+        <property name="respuesta" type="java.lang.String">
+            <column name="RESPUESTA" />
+        </property>
+        <property name="orden" type="java.lang.Integer">
+            <column name="ORDEN" />
+        </property>
+    </class>
+</hibernate-mapping>
